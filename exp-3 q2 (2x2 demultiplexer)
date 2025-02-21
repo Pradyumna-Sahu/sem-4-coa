@@ -1,0 +1,39 @@
+// vhdl code for 2x2 demultiplexer
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY demux4tol IS
+	PORT (
+		s1, s0 : IN STD_LOGIC;
+		d0, d1, d2, d3 : OUT STD_LOGIC;
+		din : IN STD_LOGIC
+	);
+END demux4tol;
+
+ARCHITECTURE behavioral OF demux4tol IS
+BEGIN
+	PROCESS (s1, s0, din)
+	BEGIN
+		d0 <= '0';
+		d1 <= '0';
+		d2 <= '0';
+		d3 <= '0';
+
+		IF (s1 = '0' AND s0 = '0') THEN
+			d0 <= din;
+		ELSEIF (s1 = '0' AND s0 = '1') THEN
+			d1 <= din;
+		ELSEIF (s1 = '1' AND s0 = '0') THEN
+			d2 <= din;
+		ELSEIF (s1 = '1' AND s0 = '1') THEN
+			d3 <= din;
+		ELSE
+			y <= '0';  --Default case
+		END IF;
+	END PROCESS;
+END behavioral;
+
+/* OUTPUT
+
+*/
