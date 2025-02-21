@@ -1,4 +1,4 @@
-// vhdl code for 2x2 demultiplexer
+// vhdl code for 4x1 demultiplexer
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
