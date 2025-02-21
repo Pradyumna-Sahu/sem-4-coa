@@ -17,11 +17,11 @@ BEGIN
 	BEGIN
 		IF (s1 = '0' AND s0 = '0') THEN
 			y <= d0;
-		ELSEIF (s1 = '0' AND s0 = '1') THEN
+		ELSIF (s1 = '0' AND s0 = '1') THEN
 			y <= d1;
-		ELSEIF (s1 = '1' AND s0 = '0') THEN
+		ELSIF (s1 = '1' AND s0 = '0') THEN
 			y <= d2;
-		ELSEIF (s1 = '1' AND s0 = '1') THEN
+		ELSIF (s1 = '1' AND s0 = '1') THEN
 			y <= d3;
 		ELSE
 			y <= '0';  --Default case
