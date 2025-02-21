@@ -1,0 +1,38 @@
+//vhdl code for 4x2 encoder
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY encoder4to2 IS
+	PORT (
+		s1, s0 : OUT STD_LOGIC;
+		d0, d1, d2, d3 : IN STD_LOGIC;
+	);
+END encoder4to2;
+
+ARCHITECTURE behavioral OF encoder4to2 IS
+BEGIN
+	PROCESS (d0, d1, d2, d3)
+	BEGIN
+		IF d3 = '1' THEN
+			s1 <= '1';
+			s0 <= '1';
+		ELSEIF d2 = '1' THEN
+			s1 <= '1';
+			s0 <= '0';
+		ELSEIF d1 = '1' THEN
+			s1 <= '0';
+			s0 <= '1';
+		ELSEIF d0 = '1' THEN
+			s1 <= '0';
+			s0 <= '0';
+		ELSE 
+			s1 <= '0';
+			s0 <= '0'; --Deafult case
+		END IF;
+	END PROCESS;
+END behavioral;
+
+/* OUTPUT
+
+*/
