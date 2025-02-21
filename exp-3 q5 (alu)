@@ -1,6 +1,33 @@
 //vhdl code for alu
 
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
 
+ENTITY ALU IS
+	PORT (
+		A,B : IN STD_LOGIC;
+		S1, S0 : IN STD_LOGIC;
+		Result : OUT STD_LOGIC;
+	);
+END ALU;
+
+ARCHITECTURE behavioral OF ALU IS
+BEGIN
+	PROCESS (A, B, S1, S0)
+	BEGIN
+		IF (S1 = '0' AND S0 = '0' THEN
+			Result <= A XOR B;  -- XOR Operation
+		ELSIF (S1 = '0' AND S0 = '1') THEN
+			Result <= A AND B;  -- AND Operation
+		ELSIF (S1 = '1' AND S0 = '0') THEN
+			Result <= A OR B;  -- OR Operation
+		ELSIF (S1 = '1' AND S0 = '1') THEN
+			Result <= NOT A;  -- NOT Operation (on A)
+		ELSE
+			Result <= '0';  -- Default case
+		END IF;
+	END PROCESS;
+END behavioral;
 
 /* OUTPUT
 
