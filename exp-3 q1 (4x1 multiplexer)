@@ -1,4 +1,4 @@
-// vhdl code for 2x2 multiplexer
+// vhdl code for 4x1 multiplexer
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
