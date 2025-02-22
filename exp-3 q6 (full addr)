@@ -1,0 +1,22 @@
+//vhdl code for full adder
+
+-- Full Adder using Strcutural Model
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY HalfAdder IS
+	PORT (
+		A,B : IN STD_LOGIC;
+		Sum, Carry : OUT STD_LOGIC;
+	);
+END HalfAdder;
+
+ARCHITECTURE behavioral OF HalfAdder IS
+BEGIn
+	Sum <= A XOR B;
+	Carry <= A AND B;
+END structural;
+
+ENTITY FullAdder_Structural IS
+	PORT (
+		
